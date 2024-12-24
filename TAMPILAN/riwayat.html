@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Absensi - Sistem Absensi Wajah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .stats-card {
+            transition: transform 0.2s;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .date-filter {
+            max-width: 200px;
+        }
+        .card-counter {
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .card-counter i {
+            font-size: 40px;
+            opacity: 0.3;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .card-counter .count-numbers {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .card-counter .count-name {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-user-check me-2"></i>
+                Sistem Absensi Wajah
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="absensi.html">
+                            <i class="fas fa-home me-1"></i> Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="riwayat.html">
+                            <i class="fas fa-history me-1"></i> Riwayat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user me-1"></i> Profil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.html">
+                            <i class="fas fa-sign-out-alt me-1"></i> Keluar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card stats-card shadow-sm">
+                    <div class="card-counter bg-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="count-numbers">85%</span>
+                        <span class="count-name">Tingkat Kehadiran</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card shadow-sm">
+                    <div class="card-counter bg-success">
+                        <i class="fas fa-clock"></i>
+                        <span class="count-numbers">20</span>
+                        <span class="count-name">Hadir Tepat Waktu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card shadow-sm">
+                    <div class="card-counter bg-warning">
+                        <i class="fas fa-hourglass-half"></i>
+                        <span class="count-numbers">5</span>
+                        <span class="count-name">Terlambat</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card shadow-sm">
+                    <div class="card-counter bg-danger">
+                        <i class="fas fa-times-circle"></i>
+                        <span class="count-numbers">2</span>
+                        <span class="count-name">Tidak Hadir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h4 class="mb-0">
+                            <i class="fas fa-history me-2 text-primary"></i>
+                            Riwayat Absensi
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-md-end mt-3 mt-md-0">
+                            <select class="form-select me-2 date-filter">
+                                <option>Semua Bulan</option>
+                                <option>Desember 2024</option>
+                                <option>November 2024</option>
+                                <option>Oktober 2024</option>
+                            </select>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download me-2"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Jam Masuk</th>
+                                <th>Jam Keluar</th>
+                                <th>Durasi</th>
+                                <th>Status</th>
+                                <th>Lokasi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>24 Dec 2024</td>
+                                <td>08:00</td>
+                                <td>17:00</td>
+                                <td>9 jam</td>
+                                <td><span class="badge bg-success">Hadir</span></td>
+                                <td>Kantor Pusat</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" title="Detail">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23 Dec 2024</td>
+                                <td>08:15</td>
+                                <td>17:00</td>
+                                <td>8 jam 45 menit</td>
+                                <td><span class="badge bg-warning">Terlambat</span></td>
+                                <td>Kantor Pusat</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" title="Detail">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>22 Dec 2024</td>
+                                <td>07:55</td>
+                                <td>17:00</td>
+                                <td>9 jam 5 menit</td>
+                                <td><span class="badge bg-success">Hadir</span></td>
+                                <td>Kantor Pusat</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" title="Detail">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21 Dec 2024</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><span class="badge bg-danger">Tidak Hadir</span></td>
+                                <td>-</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" title="Detail">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logout - Sistem Absensi Wajah</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar-brand {
+        font-weight: 600;
+      }
+      .logout-card {
+        max-width: 500px;
+        margin: 100px auto;
+      }
+      .btn-group {
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-user-check me-2"></i>
+          Sistem Absensi Wajah
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="absensi.html">
+                <i class="fas fa-home me-1"></i> Beranda
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="riwayat.html">
+                <i class="fas fa-history me-1"></i> Riwayat
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="fas fa-user me-1"></i> Profil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="logout.html">
+                <i class="fas fa-sign-out-alt me-1"></i> Keluar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="logout-card">
+        <div class="card shadow-sm">
+          <div class="card-body text-center p-5">
+            <i class="fas fa-sign-out-alt fa-4x text-primary mb-4"></i>
+            <h3 class="card-title mb-3">Konfirmasi Keluar</h3>
+            <p class="card-text text-muted mb-4">
+              Apakah Anda yakin ingin keluar dari Sistem Absensi Wajah?
+            </p>
+            <div class="d-flex justify-content-center btn-group">
+              <a href="javascript:history.back()" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>
+                Kembali
+              </a>
+              <a href="#" class="btn btn-primary">
+                <i class="fas fa-sign-out-alt me-2"></i>
+                Ya, Keluar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

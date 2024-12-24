@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Guru - Sistem Absensi Wajah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .stats-card {
+            border-left: 4px solid #0d6efd;
+            background: #f8f9fa;
+        }
+        .navbar-brand {
+            font-weight: 600;
+        }
+        .schedule-card {
+            border-left: 4px solid #198754;
+        }
+        .subject-badge {
+            font-size: 0.9em;
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-user-check me-2"></i>
+                Sistem Absensi Wajah
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="absensi.html">
+                            <i class="fas fa-home me-1"></i> Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="riwayat.html">
+                            <i class="fas fa-history me-1"></i> Riwayat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">
+                            <i class="fas fa-user me-1"></i> Profil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.html">
+                            <i class="fas fa-sign-out-alt me-1"></i> Keluar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <!-- Profile Card -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-chalkboard-teacher me-2 text-primary"></i>
+                            Profil Guru
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Profile Info -->
+                        <div class="text-center mb-4">
+                            <img src="/api/placeholder/150/150" alt="Foto Profil" class="profile-image mb-3">
+                            <h4>Budi Santoso, S.Pd.</h4>
+                            <p class="text-muted mb-2">Guru Matematika</p>
+                            <p class="mb-0">
+                                <span class="badge bg-primary">Guru Senior</span>
+                                <span class="badge bg-success ms-2">Wali Kelas XI IPA 2</span>
+                            </p>
+                        </div>
+
+                        <!-- Statistics -->
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="stats-card p-3 rounded">
+                                    <h6 class="mb-1">Jam Mengajar</h6>
+                                    <h4 class="mb-0">24 JPL</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stats-card p-3 rounded">
+                                    <h6 class="mb-1">Kehadiran</h6>
+                                    <h4 class="mb-0">98%</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stats-card p-3 rounded">
+                                    <h6 class="mb-1">Cuti Tersisa</h6>
+                                    <h4 class="mb-0">12 Hari</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Teaching Schedule -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">
+                                <i class="fas fa-calendar-alt me-2 text-primary"></i>
+                                Jadwal Mengajar
+                            </h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Hari</th>
+                                            <th>Jam</th>
+                                            <th>Kelas</th>
+                                            <th>Mata Pelajaran</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Senin</td>
+                                            <td>07:00 - 08:30</td>
+                                            <td>XI IPA 1</td>
+                                            <td>Matematika</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Senin</td>
+                                            <td>08:30 - 10:00</td>
+                                            <td>XI IPA 2</td>
+                                            <td>Matematika</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Selasa</td>
+                                            <td>10:15 - 11:45</td>
+                                            <td>X IPA 1</td>
+                                            <td>Matematika</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Class Information -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">
+                                <i class="fas fa-users me-2 text-primary"></i>
+                                Informasi Kelas Wali
+                            </h5>
+                            <div class="card schedule-card bg-light">
+                                <div class="card-body">
+                                    <h6>Kelas XI IPA 2</h6>
+                                    <div class="row g-2">
+                                        <div class="col-md-4">
+                                            <small class="text-muted d-block">Jumlah Siswa</small>
+                                            <strong>32 Siswa</strong>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <small class="text-muted d-block">Ruang Kelas</small>
+                                            <strong>R.23 Lantai 2</strong>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <small class="text-muted d-block">Tahun Ajaran</small>
+                                            <strong>2024/2025</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personal Information -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">
+                                <i class="fas fa-info-circle me-2 text-primary"></i>
+                                Informasi Pribadi
+                            </h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">NIP</label>
+                                    <input type="text" class="form-control" value="196001011985031001" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" value="budi.santoso@sekolah.sch.id" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Nomor Telepon</label>
+                                    <input type="tel" class="form-control" value="+62 812-3456-7890" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Masa Kerja</label>
+                                    <input type="text" class="form-control" value="15 Tahun" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certifications -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">
+                                <i class="fas fa-certificate me-2 text-primary"></i>
+                                Sertifikasi & Pencapaian
+                            </h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-info subject-badge">Sertifikasi Guru</span>
+                                <span class="badge bg-info subject-badge">Pelatihan Kurikulum Merdeka</span>
+                                <span class="badge bg-info subject-badge">Guru Berprestasi 2023</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary me-2">
+                                <i class="fas fa-edit me-2"></i>
+                                Edit Profil
+                            </button>
+                            <button class="btn btn-outline-primary">
+                                <i class="fas fa-key me-2"></i>
+                                Ubah Password
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
